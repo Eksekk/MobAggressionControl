@@ -1,4 +1,4 @@
-package com.eksekk.mobaggressioncontrol.customai;
+package com.eksekk.mobaggressioncontrol;
 
 import java.util.ArrayList;
 

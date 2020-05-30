@@ -1,6 +1,6 @@
 package com.eksekk.mobaggressioncontrol.config;
 
-import com.eksekk.mobaggressioncontrol.Main;
+import com.eksekk.mobaggressioncontrol.AggroControl;
 import com.eksekk.mobaggressioncontrol.util.Reference;
 
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class ConfigFields
 			String[] splittedMobsItems = line.split(";");
 			if (splittedMobsItems.length != 2)
 			{
-				Main.LOGGER.error("Config entry \"" + line + "\"is invalid, skipping this entry");
+				AggroControl.LOGGER.error("Config entry \"" + line + "\"is invalid, skipping this entry");
 				continue;
 			}
 			ArrayList<Class> mobs = new ArrayList<>();
@@ -52,7 +52,7 @@ public class ConfigFields
 			
 			if (splittedMobs.length == 0 || splittedItems.length == 0)
 			{
-				Main.LOGGER.error("Config entry \"" + line + "\"is invalid, skipping this entry");
+				AggroControl.LOGGER.error("Config entry \"" + line + "\"is invalid, skipping this entry");
 				continue;
 			}
 			
@@ -60,7 +60,7 @@ public class ConfigFields
 			{
 				if (!ForgeRegistries.ENTITIES.containsKey(new ResourceLocation(mobid)))
 				{
-					Main.LOGGER.error("Config mob entry \"" + mobid + "\" is invalid, skipping this mob");
+					AggroControl.LOGGER.error("Config mob entry \"" + mobid + "\" is invalid, skipping this mob");
 					continue;
 				}
 				EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobid));
@@ -71,7 +71,7 @@ public class ConfigFields
 			{
 				if (!ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemid)))
 				{
-					Main.LOGGER.error("Config item entry \"" + itemid + "\" is invalid, skipping this item");
+					AggroControl.LOGGER.error("Config item entry \"" + itemid + "\" is invalid, skipping this item");
 					continue;
 				}
 				items.add(ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemid)));

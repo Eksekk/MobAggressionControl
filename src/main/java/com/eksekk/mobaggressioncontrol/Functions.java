@@ -1,11 +1,12 @@
 package com.eksekk.mobaggressioncontrol;
 
 import com.eksekk.mobaggressioncontrol.config.ConfigFields;
-import com.eksekk.mobaggressioncontrol.customai.BaublesHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.apache.logging.log4j.Level;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,7 +26,7 @@ public class Functions
 		
 		if (items == null)
 		{
-			Main.LOGGER.info("Map entry not found, returning");
+			//AggroControl.LOGGER.log(Level.DEBUG, "Map entry not found, returning");
 			return false;
 		}
 		
@@ -62,11 +63,11 @@ public class Functions
 		}
 		if (allEquipped)
 		{
-			Main.LOGGER.info("Player satisfies requirements for entity");
+			//AggroControl.LOGGER.log(Level.DEBUG, "Player satisfies requirements for entity");
 		}
 		else
 		{
-			Main.LOGGER.info("Player doesn't satisfy requirements for entity");
+			//AggroControl.LOGGER.log(Level.DEBUG, "Player doesn't satisfy requirements for entity");
 		}
 		return allEquipped;
 	}

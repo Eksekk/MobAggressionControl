@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.logging.log4j.Level;
+
 import com.eksekk.mobaggressioncontrol.config.ConfigFields;
 import com.eksekk.mobaggressioncontrol.util.Reference;
 
@@ -80,7 +82,7 @@ public class EventHandlers
 				&& !(entitiesNeedingRevengeTimerReset.containsKey(living))
 				&& Functions.playerMeetsGearRequirementsForEntity((EntityPlayer)event.getTarget(), event.getEntityLiving()))
 			{
-				Main.LOGGER.info("Setting attack target to null");
+				//AggroControl.LOGGER.log(Level.DEBUG, "Setting attack target to null");
 				living.setAttackTarget(null);
 				return;
 			}

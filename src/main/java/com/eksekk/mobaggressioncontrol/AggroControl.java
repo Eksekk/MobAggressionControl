@@ -15,12 +15,12 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
-public class Main
+public class AggroControl
 {
 	public static Logger LOGGER;
 	
 	@Instance
-	public static Main instance;
+	public static AggroControl instance;
 	
 	@SidedProxy(serverSide = Reference.COMMON_PROXY_CLASS, clientSide = Reference.CLIENT_PROXY_CLASS)
 	public static CommonProxy proxy;
